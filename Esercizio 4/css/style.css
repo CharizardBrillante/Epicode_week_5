@@ -1,0 +1,96 @@
+/*---------------------------BODY--------------------------*/
+* {
+    box-sizing: border-box;
+}
+
+
+/*-------------------------NAVBAR--------------------------*/
+#navbar {
+    background: rgba(255,160,22,0.7);
+    display: grid;
+    grid-template-areas: "logo hamburger"
+                        "list list";
+    align-items: center;
+    width: 100%;
+    row-gap: 1em;
+    padding: 1em 3em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.menu-icon {
+    grid-area: hamburger;
+    justify-self:end;
+}
+
+.menu-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+#navbar #hamburger {
+    display:none;
+    grid-area: list;
+    list-style: none;
+    justify-self: start;
+    text-align: left;
+    width: 100%;
+}
+
+#hamburger li {
+    margin-bottom: 1em;
+}
+
+#hamburger li:hover {
+    border-bottom: 3px solid #fc5535;
+}
+
+#hamburger li a {
+    color: black;
+}
+
+/*------------------------ TEXT -----------------------*/
+
+#text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-start;
+    text-align: center;
+    gap: 10px;
+    height: 300px;
+}
+
+#buttons-container button{
+    height: 30px;
+    width: 200px;
+}
+
+.animate {
+    animation: rotating 3s infinite;
+}
+
+@keyframes rotating {
+    from {transform:rotateY(0deg);}
+    to {transform:rotateY(359deg);}
+}
+
+/*------------------------ TODO LIST -----------------------*/
+
+#todo-list {
+    margin: 2em auto;
+}
+
+
+#todo-list li {
+    text-align:left;
+    cursor:pointer;
+    list-style-position: inside;
+    font-size: 1.5rem;
+}
+.flagged {
+    color:grey;
+    text-decoration: line-through;
+}
